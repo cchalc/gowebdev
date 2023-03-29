@@ -16,7 +16,7 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func pathHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, "Path: ", r.URL.Path)
+	fmt.Fprint(w, r.URL.Path)
 }
 
 func main() {
