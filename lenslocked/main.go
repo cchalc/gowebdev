@@ -16,7 +16,11 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
 }
 
 func pathHandler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprint(w, r.URL.Path)
+	if r.URL.Path == "/" {
+		homeHandler(w, r)
+	} else if r.URL.Path == "/contact" {
+		contactHandler(w, r)
+	}
 }
 
 func main() {
